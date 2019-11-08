@@ -1,0 +1,317 @@
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+/* -- FONTFACE -- */
+
+/* Light */
+@font-face {
+	font-family: 'Conv_DINPro-Light tr';
+	src: url('../fonts/DINPro-Light tr.eot');
+	src: local('☺'), url('../fonts/DINPro-Light tr.woff') format('woff'),
+  url('../fonts/DINPro-Light tr.ttf') format('truetype'),
+  url('../fonts/DINPro-Light tr.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Regular */
+@font-face {
+	font-family: 'Conv_DINPro-Regular_13937';
+	src: url('../fonts/DINPro-Regular_13937.eot');
+	src: local('☺'), url('../fonts/DINPro-Regular_13937.woff') format('woff'),
+  url('../fonts/DINPro-Regular_13937.ttf') format('truetype'),
+  url('../fonts/DINPro-Regular_13937.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Bold */
+@font-face {
+	font-family: 'Conv_DINPro-Bold tr';
+	src: url('../fonts/DINPro-Bold tr.eot');
+	src: local('☺'), url('../fonts/DINPro-Bold tr.woff') format('woff'),
+  url('../fonts/DINPro-Bold tr.ttf') format('truetype'),
+  url('../fonts/DINPro-Bold tr.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* -- VARIABLES -- */
+$primary: #e44192;
+$secondary: #ef93ba;
+$white: #fff;
+
+$light-text: 'Conv_DINPro-Light tr';
+$regular-text: 'Conv_DINPro-Regular_13937';
+$bold-text: 'Conv_DINPro-Bold tr';
+
+/* -- MIXINS -- */
+.light-text { font-family: $light-text; }
+.regular-text { font-family: $regular-text; }
+.bold-text { font-family: $bold-text; }
+
+.white-text { color: #fff; }
+.light-gray-text { color: lighten(black, 70%); }
+.text-primary { color: $primary; }
+
+/* -- GLOBAL -- */
+body {
+	background: url("../images/bg-pattern.png") repeat;
+  font-family: $regular-text;
+  font-size: 16px;
+	color: lighten(black, 40%);
+	padding-bottom: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: $bold-text;
+  line-height: 1;
+}
+
+.empty-space {
+	height: 50px;
+}
+.lh-30px {
+	line-height: 30px;
+}
+a.white-icon {
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+}
+.main-container {
+	background: #fff;
+}
+
+/* -- HEADER -- */
+
+/* Nav */
+.navbar {
+  background: $primary;
+  border-bottom: 4px solid $secondary;
+
+  .navbar-nav {
+    & > li > a {
+      color: $secondary;
+      text-transform: uppercase;
+      font-family: $bold-text;
+      font-size: 13px;
+    }
+
+    & > li > a:hover,
+    & > .active > a,
+    & > .active > a:hover,
+    & > .active > a:focus {
+      background: transparent;
+      color: $white;
+    }
+  }
+
+	a.white-icon {
+		&#home {
+			background: url("../images/home.png") no-repeat;
+			background-size: cover;
+			width: 25px;
+			height: 25px;
+			margin-top: 5px;
+		}
+	}
+}
+
+/* -- CONTENT -- */
+
+/* iShine */
+.carousel-item {
+	& > img {
+		height: inherit;
+		object-fit: cover;
+	}
+}
+.col.col-sm-2 {
+  width: 20%;
+	max-width: 20%;
+}
+
+.camp-icon {
+  background: url("../images/camp-icons.png") no-repeat;
+  background-size: cover;
+  height: 222px;
+  display: block;
+  width: 216px;
+	position: relative;
+
+	&#art {
+	  background-position: -1px 0;
+	}
+	&#ballet {
+	  background-position: -227px 0;
+	}
+	&#dance {
+	  background-position: -457px 0;
+	}
+	&#music {
+	  background-position: -686px 0;
+	}
+	&#theater {
+	  background-position: -915px 0;
+	}
+
+	span {
+		position: absolute;
+    bottom: -30px;
+    text-align: center;
+    width: 100%;
+		font-family: $bold-text;
+		font-size: 20px;
+	}
+}
+
+.camp-icon:hover {
+  background: url("../images/active-camp-icons.png") no-repeat;
+	background-size: cover;
+
+	&#art {
+	  background-position: 0 0;
+	}
+	&#ballet {
+	  background-position: -222px 0;
+	}
+	&#dance {
+	  background-position: -449px 0;
+	}
+	&#music {
+	  background-position: -673px 0;
+	}
+	&#theater {
+	  background-position: -899px 0;
+	}
+}
+
+/* -- FOOTER -- */
+footer {
+	background: $primary;
+	padding: 30px 0;
+	margin-top: 100px;
+	border-top: 4px solid $secondary;
+
+	p {
+		font-size: 14px;
+	}
+	a {
+		text-decoration: underline;
+	}
+	a.white-icon {
+		&#facebook {
+			background: url("../images/facebook.png") no-repeat;
+			background-size: cover;
+		}
+		&#youtube {
+			background: url("../images/youtube.png") no-repeat;
+			background-size: cover;
+		}
+	}
+}
+
+/* -- MEDIA QUERIES -- */
+@media only screen and (max-width: 479px) {
+	.main-container {
+		background: transparent;
+	}
+	.carousel-item {
+		height: 30rem;
+
+		& > img {
+			height: inherit;
+			object-fit: cover;
+		}
+	}
+	.col-6 {
+		width: 50%;
+		max-width: 50%;
+	}
+	.camp-icon {
+		height: 166px;
+		width: 166px;
+
+		&#ballet {
+		  background-position: -172px 0;
+		}
+		&#dance {
+		  background-position: -347px 0;
+		}
+		&#music {
+		  background-position: -518px 0;
+		}
+		&#theater {
+		  background-position: -690px 0;
+		}
+	}
+
+	.camp-icon:hover {
+	  background: url("../images/active-camp-icons.png") no-repeat;
+		background-size: cover;
+
+		&#art {
+		  background-position: 0 0;
+		}
+		&#ballet {
+		  background-position: -168px 0;
+		}
+		&#dance {
+		  background-position: -340px 0;
+		}
+		&#music {
+		  background-position: -510px 0;
+		}
+		&#theater {
+		  background-position: -675px 0;
+		}
+	}
+}
+@media only screen and (min-width: 768px) {
+	.main-container {
+		background: transparent;
+	}
+	.camp-icon {
+		width: 170px;
+		height: 170px;
+
+		&#ballet {
+		  background-position: -176px 0;
+		}
+		&#dance {
+		  background-position: -356px 0;
+		}
+		&#music {
+		  background-position: -530px 0;
+		}
+		&#theater {
+		  background-position: -706px 0;
+		}
+	}
+
+	.camp-icon:hover {
+	  background: url("../images/active-camp-icons.png") no-repeat;
+		background-size: cover;
+
+		&#art {
+		  background-position: 0 0;
+		}
+		&#ballet {
+		  background-position: -172px 0;
+		}
+		&#dance {
+		  background-position: -349px 0;
+		}
+		&#music {
+		  background-position: -521px 0;
+		}
+		&#theater {
+		  background-position: -695px 0;
+		}
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.main-container {
+		background: $white;
+	}
+}
