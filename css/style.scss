@@ -39,23 +39,27 @@
 $primary: #e44192;
 $secondary: #ef93ba;
 $white: #fff;
+$dark-pink: #c61656;
 
 $light-text: 'Conv_DINPro-Light tr';
 $regular-text: 'Conv_DINPro-Regular_13937';
 $bold-text: 'Conv_DINPro-Bold tr';
+$serif: 'IM Fell Double Pica';
 
 /* -- MIXINS -- */
 .light-text { font-family: $light-text; }
 .regular-text { font-family: $regular-text; }
 .bold-text { font-family: $bold-text; }
 
-.white-text { color: #fff; }
+.white-text { color: #fff !important; }
 .light-gray-text { color: lighten(black, 70%); }
 .text-primary { color: $primary; }
 
+.serif { font-family: $serif; }
+
 /* -- GLOBAL -- */
 body {
-	background: url("../images/bg-pattern.png") repeat;
+	background: url("../images/bg-pattern.png") repeat fixed;
   font-family: $regular-text;
   font-size: 16px;
 	color: lighten(black, 40%);
@@ -79,6 +83,33 @@ a.white-icon {
 }
 .main-container {
 	background: #fff;
+}
+.quotation{
+  quotes: "\201C""\201D""\2018""\2019";
+  line-height: 1.4;
+	font-size: 20px;
+}
+.quotation:before {
+  content: open-quote;
+  display: inline;
+  height: 0;
+  line-height: 0;
+  left: -10px;
+  position: relative;
+  top: 20px;
+  font-size: 3em;
+	font-family: Times New Roman,sans-serif;
+}
+.quotation::after {
+  content: close-quote;
+  display: inline;
+  height: 0;
+  line-height: 0;
+  left: 10px;
+  position: relative;
+  top: 20px;
+  font-size: 3em;
+	font-family: Times New Roman,sans-serif;
 }
 
 /* -- HEADER -- */
@@ -185,11 +216,96 @@ a.white-icon {
 	}
 }
 
+/* Workshops */
+.text-muted {
+	font-size: 12px;
+}
+.form-check {
+	input[type=radio]{
+	  position: absolute;
+	  visibility: hidden;
+	}
+	label{
+	  display: block;
+	  position: relative;
+	  z-index: 9;
+	  cursor: pointer;
+	  -webkit-transition: all 0.25s linear;
+	}
+	&:hover label{
+		color: $secondary;
+	}
+	.check{
+	  display: block;
+	  position: absolute;
+	  border: 2px solid $primary;
+	  border-radius: 100%;
+	  height: 25px;
+	  width: 25px;
+		top: 0;
+	  left: 0;
+		z-index: 5;
+		transition: border .25s linear;
+		-webkit-transition: border .25s linear;
+	}
+	&:hover .check {
+	  border: 2px solid $secondary;
+	}
+	.check::before {
+	  display: block;
+	  position: absolute;
+		content: '';
+	  border-radius: 100%;
+	  height: 15px;
+	  width: 15px;
+	  top: 3px;
+		left: 3px;
+	  margin: auto;
+		transition: background 0.25s linear;
+		-webkit-transition: background 0.25s linear;
+	}
+
+	input[type=radio]:checked ~ .check {
+	  border: 2px solid $primary;
+	}
+
+	input[type=radio]:checked ~ .check::before{
+	  background: $primary;
+	}
+
+	input[type=radio]:checked ~ label{
+	  color: $primary;
+	}
+}
+
+.explore {
+	background: url("../images/explore-bg.jpg") no-repeat;
+	background-size: cover;
+}
+.camp-info {
+	img.img-fluid {
+		height: 100%;
+	}
+}
+
+.testimonial {
+	background: $dark-pink;
+}
+.testi-user {
+	img {
+		border-radius: 50%;
+		width: 80px;
+		float: left;
+	}
+	a {
+		color: lighten($primary, 20);
+	}
+}
+
 /* -- FOOTER -- */
 footer {
 	background: $primary;
 	padding: 30px 0;
-	margin-top: 100px;
 	border-top: 4px solid $secondary;
 
 	p {
@@ -271,20 +387,20 @@ footer {
 		background: transparent;
 	}
 	.camp-icon {
-		width: 170px;
-		height: 170px;
+		width: 158px;
+		height: 158px;
 
 		&#ballet {
-		  background-position: -176px 0;
+		  background-position: -164px 0;
 		}
 		&#dance {
-		  background-position: -356px 0;
+		  background-position: -328px 0;
 		}
 		&#music {
-		  background-position: -530px 0;
+		  background-position: -490px 0;
 		}
 		&#theater {
-		  background-position: -706px 0;
+		  background-position: -650px 0;
 		}
 	}
 
@@ -296,16 +412,16 @@ footer {
 		  background-position: 0 0;
 		}
 		&#ballet {
-		  background-position: -172px 0;
+		  background-position: -159px 0;
 		}
 		&#dance {
-		  background-position: -349px 0;
+		  background-position: -322px 0;
 		}
 		&#music {
-		  background-position: -521px 0;
+		  background-position: -482px 0;
 		}
 		&#theater {
-		  background-position: -695px 0;
+		  background-position: -640px 0;
 		}
 	}
 }
