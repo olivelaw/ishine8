@@ -10038,6 +10038,10 @@ footer a.white-icon#youtube {
   .camp-icon:hover#theater {
     background-position: -675px 0;
   }
+
+  .thankyou-icons {
+    width: 300px;
+  }
 }
 @media only screen and (min-width: 768px) {
   .main-container {
@@ -10087,6 +10091,10 @@ footer a.white-icon#youtube {
   }
   .camp-icon:hover#theater {
     background-position: -640px 0;
+  }
+
+  .thankyou-icons {
+    width: 300px;
   }
 }
 @media only screen and (min-width: 992px) {
